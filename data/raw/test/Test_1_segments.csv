@@ -1,0 +1,7 @@
+start_s,end_s,label
+0,16,still
+19,34,standing
+34,55,walking
+56,68,jumping
+68,80,standing
+81,100,jumping
