@@ -1,8 +1,8 @@
-# Human Activity Recognition with a From-Scratch Hidden Markov Model
+# Human Activity Recognition with a Hidden Markov Model Built from Scratch
 
 > A waist-worn phone that tells a carer whether someone is standing, walking, moving vigorously, or not wearing the phone at all.
 
-**Author:** Elvin Cyubahiro · Formative 2 – Hidden Markov Models
+**Author:** Elvin Cyubahiro · Formative 2: Hidden Markov Models
 
 ## Results at a glance
 
@@ -17,13 +17,21 @@
 | Jumping | 57 | 1.000 | 0.984 |
 | Still | 27 | 0.963 | 1.000 |
 
+- **test_01** (same evening as training, recorded after every training clip): **100 %**
+- **test_02** (three days later, different room): **92.5 %**. Its first decoding failed on still and prompted the tilt features and five extra still clips, so only test_01 is strictly blind.
+- Windows that straddle an activity change are not scored (17 of 199).
+
 ![Confusion matrix](reports/figures/confusion_matrix.png)
+
+![Decoded sequences](reports/figures/decoded_sequences.png)
+
+![Transition matrix and Baum–Welch convergence](reports/figures/transition_and_convergence.png)
 
 ## Dataset
 
-- **65** cleaned training clips (8–10 s each): standing 15, walking 15, jumping 15, still 20; every activity > 90 s
+- **65** cleaned training clips (8–10 s each): standing 15, walking 15, jumping 15, still 20; every activity 140–184 s
 - **2** unseen continuous test recordings (100 s and 101 s) from separate sessions, each containing all four activities
-- Sensors: accelerometer, gyroscope and gravity (x, y, z), harmonized to **50 Hz**
+- Sensors: accelerometer, gyroscope and gravity (x, y, z), harmonised to **50 Hz**
 
 | Device | Used for | App | Measured accel Hz | Measured gyro Hz |
 |---|---|---|---|---|
